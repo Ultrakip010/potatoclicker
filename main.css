@@ -12,6 +12,12 @@ body {
     margin: 0;
 }
 
+body.potato {
+    background: url('potato-theme.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #8B4513;
+}
+
 body.dark {
     background: linear-gradient(to bottom, #333, #555);
     color: white;
@@ -28,6 +34,11 @@ body.light {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+body.potato #mainContent, body.potato #upgradeContainer {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #8B4513;
 }
 
 body.dark #mainContent, body.dark #upgradeContainer {
@@ -50,6 +61,10 @@ h1 {
     margin-bottom: 20px;
 }
 
+body.potato h1 {
+    color: #8B4513;
+}
+
 body.dark h1 {
     color: #ddd;
 }
@@ -58,6 +73,10 @@ p {
     font-size: 18px;
     color: #666;
     margin: 10px 0;
+}
+
+body.potato p {
+    color: #8B4513;
 }
 
 body.dark p {
@@ -79,12 +98,20 @@ button {
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
+body.potato button {
+    background-color: #8B4513;
+}
+
 body.dark button {
     background-color: #2E7D32;
 }
 
 button:hover {
     background-color: #45a049;
+}
+
+body.potato button:hover {
+    background-color: #A0522D;
 }
 
 body.dark button:hover {
@@ -104,6 +131,10 @@ button:active {
     border: 5px solid #8B4513;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.1s ease;
+}
+
+body.potato #potatoButton {
+    border: 5px solid #A0522D;
 }
 
 body.dark #potatoButton {
@@ -136,12 +167,20 @@ body.dark #potatoButton {
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
+body.potato #settingsButton {
+    background-color: #8B4513;
+}
+
 body.dark #settingsButton {
     background-color: #2E7D32;
 }
 
 #settingsButton:hover {
     background-color: #45a049;
+}
+
+body.potato #settingsButton:hover {
+    background-color: #A0522D;
 }
 
 body.dark #settingsButton:hover {
@@ -172,6 +211,11 @@ body.dark #settingsButton:hover {
     border-radius: 12px;
 }
 
+body.potato .modal-content {
+    background-color: #FFF8DC;
+    border: 1px solid #8B4513;
+}
+
 body.dark .modal-content {
     background-color: #444;
     border: 1px solid #666;
@@ -184,6 +228,10 @@ body.dark .modal-content {
     font-weight: bold;
 }
 
+body.potato .close {
+    color: #8B4513;
+}
+
 body.dark .close {
     color: #ddd;
 }
@@ -193,6 +241,11 @@ body.dark .close {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+body.potato .close:hover,
+body.potato .close:focus {
+    color: #A0522D;
 }
 
 body.dark .close:hover,
