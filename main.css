@@ -1,6 +1,4 @@
-/* File: potatoclicker/main.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* File: `potatoclicker/main.css` */
 
 body {
     font-family: 'Roboto', Arial, sans-serif;
@@ -12,6 +10,16 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+}
+
+body.dark {
+    background: linear-gradient(to bottom, #333, #555);
+    color: white;
+}
+
+body.light {
+    background: linear-gradient(to bottom, #fff, #ddd);
+    color: black;
 }
 
 #mainContent, #upgradeContainer {
@@ -86,6 +94,61 @@ button:active {
     margin: 10px 0;
 }
 
-#progressBarContainer {
+#settingsButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#settingsButton:hover {
+    background-color: #45a049;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
     width: 100%;
-    background-color: #ddd;}
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 12px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

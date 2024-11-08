@@ -138,6 +138,25 @@ document.getElementById("multiplierUpgradeButton").addEventListener("click", buy
 document.getElementById("autoClickerCountUpgradeButton").addEventListener("click", buyAutoClickerCountUpgrade);
 document.getElementById("upgradeCostReductionButton").addEventListener("click", buyUpgradeCostReduction);
 document.getElementById("bonusChanceUpgradeButton").addEventListener("click", buyBonusChanceUpgrade);
+document.getElementById("settingsButton").addEventListener("click", function() {
+    document.getElementById("settingsModal").style.display = "block";
+});
+
+document.getElementsByClassName("close")[0].addEventListener("click", function() {
+    document.getElementById("settingsModal").style.display = "none";
+});
+
+window.addEventListener("click", function(event) {
+    if (event.target == document.getElementById("settingsModal")) {
+        document.getElementById("settingsModal").style.display = "none";
+    }
+});
+
+document.getElementById("resetButton").addEventListener("click", resetPoints);
+
+document.getElementById("themeSelector").addEventListener("change", function() {
+    document.body.className = this.value;
+});
 
 // Auto-clicker functionality
 let autoClickerInterval = 1000;
