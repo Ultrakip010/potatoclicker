@@ -252,3 +252,32 @@ body.dark .close:hover,
 body.dark .close:focus {
     color: white;
 }
+
+/* File: `potatoclicker/main.css` */
+
+.modal-content a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.modal-content a:hover {
+    color: #45a049;
+}
+
+body.potato .modal-content a {
+    color: #8B4513;
+}
+
+body.potato .modal-content a:hover {
+    color: #A0522D;
+}
+
+body.dark .modal-content a {
+    color: #2E7D32;
+}
+
+body.dark .modal-content a:hover {
+    color: #1B5E20;
+}
