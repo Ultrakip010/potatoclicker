@@ -2,7 +2,11 @@
 
 function updateStatus(responseText) {
     const response = JSON.parse(responseText);
-    document.getElementById("potatoCount").innerText = response.points + " potatoes";
+    const potatoCountElement = document.getElementById("potatoCount");
+    potatoCountElement.innerText = response.points + " potatoes";
+    potatoCountElement.classList.add("increment");
+    setTimeout(() => potatoCountElement.classList.remove("increment"), 500);
+
     document.getElementById("totalPotatoes").innerText = response.totalPotatoes + " total potatoes collected";
     document.getElementById("autoClickerStatus").innerText = response.autoClicker ? "Auto-Clicker is active" : "Auto-Clicker is inactive";
     if (response.autoClicker) {
@@ -138,17 +142,25 @@ document.getElementById("multiplierUpgradeButton").addEventListener("click", buy
 document.getElementById("autoClickerCountUpgradeButton").addEventListener("click", buyAutoClickerCountUpgrade);
 document.getElementById("upgradeCostReductionButton").addEventListener("click", buyUpgradeCostReduction);
 document.getElementById("bonusChanceUpgradeButton").addEventListener("click", buyBonusChanceUpgrade);
+// Show modal with animation
 document.getElementById("settingsButton").addEventListener("click", function() {
-    document.getElementById("settingsModal").style.display = "block";
+    const modal = document.getElementById("settingsModal");
+    modal.classList.add("show");
+    modal.style.display = "block";
 });
 
+// Hide modal with animation
 document.getElementsByClassName("close")[0].addEventListener("click", function() {
-    document.getElementById("settingsModal").style.display = "none";
+    const modal = document.getElementById("settingsModal");
+    modal.classList.remove("show");
+    setTimeout(() => modal.style.display = "none", 500);
 });
 
 window.addEventListener("click", function(event) {
-    if (event.target == document.getElementById("settingsModal")) {
-        document.getElementById("settingsModal").style.display = "none";
+    const modal = document.getElementById("settingsModal");
+    if (event.target == modal) {
+        modal.classList.remove("show");
+        setTimeout(() => modal.style.display = "none", 500);
     }
 });
 
