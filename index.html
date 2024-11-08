@@ -1,0 +1,30 @@
+<!-- File: potatoclicker/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Potato Clicker</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Potato Clicker</h1>
+    <div id="mainContent">
+        <p>Click the potato to get more potatoes!</p>
+        <p id="potatoCount"><?php echo $clicker->getPoints(); ?> potatoes</p>
+        <p id="totalPotatoes"><?php echo $clicker->getTotalPotatoes(); ?> total potatoes collected</p>
+        <p id="autoClickerStatus"><?php echo $clicker->isAutoClickerActive() ? 'Auto-Clicker is active' : 'Auto-Clicker is inactive'; ?></p>
+        <button id="potatoButton">Potato</button>
+        <button id="resetButton">Reset</button>
+    </div>
+    <div id="upgradeContainer">
+        <button id="upgradeButton">Buy Auto-Clicker (10 potatoes)</button>
+        <button id="speedUpgradeButton" style="display:none;">Increase Auto-Clicker Speed (20 potatoes)</button>
+        <button id="pointsUpgradeButton">Increase Points Per Click (<?php echo $clicker->getPointsUpgradeCost(); ?> potatoes)</button>
+        <button id="multiplierUpgradeButton">Increase Points Multiplier (<?php echo $clicker->getMultiplierUpgradeCost(); ?> potatoes)</button>
+        <button id="autoClickerCountUpgradeButton">Increase Auto-Clicker Count (<?php echo $clicker->getAutoClickerCountUpgradeCost(); ?> potatoes)</button>
+        <button id="upgradeCostReductionButton">Reduce Upgrade Costs (<?php echo $clicker->getUpgradeCostReductionUpgradeCost(); ?> potatoes)</button>
+        <button id="bonusChanceUpgradeButton">Increase Bonus Chance (<?php echo $clicker->getBonusChanceUpgradeCost(); ?> potatoes)</button>
+    </div>
+    <script src="potatoclicker.js"></script>
+</body>
+</html>
