@@ -30,6 +30,11 @@ body.light {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
+body.dark #mainContent, body.dark #upgradeContainer {
+    background-color: rgba(50, 50, 50, 0.9);
+    border: 2px solid #666;
+}
+
 #mainContent {
     flex: 1;
 }
@@ -45,10 +50,18 @@ h1 {
     margin-bottom: 20px;
 }
 
+body.dark h1 {
+    color: #ddd;
+}
+
 p {
     font-size: 18px;
     color: #666;
     margin: 10px 0;
+}
+
+body.dark p {
+    color: #bbb;
 }
 
 button {
@@ -66,8 +79,16 @@ button {
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
+body.dark button {
+    background-color: #2E7D32;
+}
+
 button:hover {
     background-color: #45a049;
+}
+
+body.dark button:hover {
+    background-color: #1B5E20;
 }
 
 button:active {
@@ -83,6 +104,10 @@ button:active {
     border: 5px solid #8B4513;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.1s ease;
+}
+
+body.dark #potatoButton {
+    border: 5px solid #5D4037;
 }
 
 #potatoButton:active {
@@ -111,8 +136,16 @@ button:active {
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
+body.dark #settingsButton {
+    background-color: #2E7D32;
+}
+
 #settingsButton:hover {
     background-color: #45a049;
+}
+
+body.dark #settingsButton:hover {
+    background-color: #1B5E20;
 }
 
 .modal {
@@ -139,6 +172,11 @@ button:active {
     border-radius: 12px;
 }
 
+body.dark .modal-content {
+    background-color: #444;
+    border: 1px solid #666;
+}
+
 .close {
     color: #aaa;
     float: right;
@@ -146,9 +184,18 @@ button:active {
     font-weight: bold;
 }
 
+body.dark .close {
+    color: #ddd;
+}
+
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+body.dark .close:hover,
+body.dark .close:focus {
+    color: white;
 }

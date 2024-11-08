@@ -158,6 +158,22 @@ document.getElementById("themeSelector").addEventListener("change", function() {
     document.body.className = this.value;
 });
 
+// Load the saved theme from localStorage on page load
+document.addEventListener("DOMContentLoaded", function() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        document.body.className = savedTheme;
+        document.getElementById("themeSelector").value = savedTheme;
+    }
+});
+
+// Save the selected theme to localStorage when changed
+document.getElementById("themeSelector").addEventListener("change", function() {
+    const selectedTheme = this.value;
+    document.body.className = selectedTheme;
+    localStorage.setItem("theme", selectedTheme);
+});
+
 // Auto-clicker functionality
 let autoClickerInterval = 1000;
 let autoClickerIntervalId = setInterval(autoClick, autoClickerInterval);
